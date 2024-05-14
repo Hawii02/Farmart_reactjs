@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Login from './Login';
-import SignUp from './SignUp'; // Import the SignUp component
+// import SignUp from './SignUp'; // Import the SignUp component
 import FilterandSort from './FilterandSort';
 import MyCart from './MyCart';
 import SearchBar from './SearchBar';

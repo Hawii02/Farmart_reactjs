@@ -12,6 +12,11 @@
 .sidebar li{
     padding-top: 25px;
 }
+
+.sidebar li:hover{
+    text-transform: uppercase;
+}
+
 .sidebar ul {
     list-style-type: none; /* Remove bullets */
   }

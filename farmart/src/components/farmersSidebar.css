@@ -13,7 +13,9 @@
     padding-top: 25px;
     
 }
-
+.farmersidebar li:hover{
+    text-transform: uppercase;
+}
 .farmersidebar ul {
     list-style-type: none; /* Remove bullets */
   }

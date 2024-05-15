@@ -1,52 +1,36 @@
-import React, { useState } from "react";
-import "./Login.css";
+import React, { useState } from 'react';
+import './Login.css'; 
 
-const Login = ({ setIsLoggedIn }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+function LoginForm() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Here you can implement your authentication logic
-    // For simplicity, I'm just checking if username and password are not empty
-    if (username.trim() === "" || password.trim() === "") {
-      setError("Please enter username and password");
-    } else {
-      // Assuming successful login sets isLoggedIn to true
-      setIsLoggedIn(true);
-      // You can also redirect the user to another page upon successful login
-      // For example, history.push('/dashboard');
-    }
+  const handleLogin = (event) => {
+    event.preventDefault();
+    // Here you can implement your login logic
+    console.log("Username:", username);
+    console.log("Password:", password);
   };
 
   return (
-    <div className="Login-container">
-      <h2>Login</h2>
-      {error && <p>{error}</p>}
+    <div className="login-container">
       <form onSubmit={handleLogin}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">Login</button>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Log In</button>
       </form>
     </div>
   );
-};
+}
 
-export default Login;
+export default LoginForm;

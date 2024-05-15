@@ -1,0 +1,20 @@
+.farmersidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 200px;
+    height: 100vh;
+    padding: 20px;
+    background-color: grey;
+    color:black;
+}
+
+.farmersidebar li{
+    padding-top: 25px;
+    
+}
+
+.farmersidebar ul {
+    list-style-type: none; /* Remove bullets */
+  }
+  

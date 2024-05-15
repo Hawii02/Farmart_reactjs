@@ -4,6 +4,7 @@ import Login from './Login';
 import FilterandSort from './FilterandSort';
 import MyCart from './MyCart';
 import SearchBar from './SearchBar';
+import './home.css'
 
 function Home() {
   const animals = [
@@ -35,7 +36,7 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className='home-container'>
       <h1>Farm<span className='highlighted'>art</span></h1>
       <Login className='login'/>
       <MyCart className='mycart' />

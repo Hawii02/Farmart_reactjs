@@ -34,9 +34,9 @@ function SignUp() {
 
   return (
     <div className="background-image">
-        {/* <div>
+        { <div>
           <h1>Welcome to Farmart</h1>
-        </div> */}
+        </div> }
         <div className="signup-container">
             <form onSubmit={handleSubmit} className="signup-form">
                 <h1>Sign Up</h1>

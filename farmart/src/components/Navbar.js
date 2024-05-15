@@ -1,35 +1,38 @@
 import React from "react";
-import "./Navbar.css";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+import "./Navbar.css"; // Import your CSS file for navbar styling
 
-const Navbar = () => {
+function Navbar() {
   return (
     <nav className="navbar">
-      <div className="navbar-logo">
-        <Link to="/">Farmart</Link>
+      <div className="navbar-brand">
+        <Link to="/">Logo</Link>
       </div>
-      <ul className="navbar-links">
-        <li>
-          <Link to="/signup">SignUp</Link>
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link to="/" className="nav-link">Home</Link>
         </li>
-        <li>
-          < Link to="login">Login</Link>
+        <li className="nav-item">
+          <Link to="/about" className="nav-link">About</Link>
         </li>
-        <li>
-          <Link to="/">Home</Link>
+        <li className="nav-item">
+          <Link to="/contact" className="nav-link">Contact</Link>
         </li>
-        <li>
-          <Link to="/products">Products</Link>
+        <li className="nav-item">
+          <Link to="/dashboard" className="nav-link">Dashboard</Link>
         </li>
-        <li>
-          <Link to="/about">About</Link>
+        <li className="nav-item">
+          <Link to="/login" className="nav-link">Login</Link>
         </li>
-        <li>
-          <Link to="/contact">Contact</Link>
+        <li className="nav-item">
+          <Link to="/signup" className="nav-link">Sign Up</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/cart" className="nav-link">Cart</Link>
         </li>
       </ul>
     </nav>
   );
-};
+}
 
 export default Navbar;

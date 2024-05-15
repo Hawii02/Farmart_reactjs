@@ -23,11 +23,13 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/footer" element={<Footer />} />
+          <Route path="/login" element={<Login  />}  />
           <Route
             path="/login"
             element={<Login setIsLoggedIn={setIsLoggedIn} />}
           />
           <Route path="/signup" element={<SignUp />} />
+          
         </Routes>
         <Footer />
       </div>

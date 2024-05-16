@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import Login from './Login';
-import FilterandSort from './FilterandSort';
-import Search from './Search';
-import MyCart from './MyCart';
-import SellerRating from './SellerRating';
+import './Home.css';
 
 function Home() {
   const animals = [
+    { id: 1, breed: 'Goat', category: 'livestock', image_url: 'https://www.africanfarming.com/wp-content/uploads/komatsu.jpeg', price: 1000, farmer_id: 'seller1' },
+    { id: 2, breed: 'Goat', category: 'livestock', image_url: 'https://static.wixstatic.com/media/ec2c85_15cda56ec7074941b9c4b9fffa8c975e~mv2.jpg/v1/fill/w_303,h_300,al_c,q_80,usm_0.33_1.00_0.00,enc_auto/IMG_1953_JPG.jpg', price: 50, farmer_id: 'seller1'},
+    { id: 3, breed: 'Horse', category: 'equines', image_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTImaFZP_SRMx0vtv_qz65a1coTjlgaM6YLgJXUJciV9Q&s', price: 2000, farmer_id: 'seller2' },
     { id: 1, breed: 'Goat', category: 'livestock', image_url: 'https://www.africanfarming.com/wp-content/uploads/komatsu.jpeg', price: 1000, farmer_id: 'seller1' },
     { id: 2, breed: 'Goat', category: 'livestock', image_url: 'https://static.wixstatic.com/media/ec2c85_15cda56ec7074941b9c4b9fffa8c975e~mv2.jpg/v1/fill/w_303,h_300,al_c,q_80,usm_0.33_1.00_0.00,enc_auto/IMG_1953_JPG.jpg', price: 50, farmer_id: 'seller1'},
     { id: 3, breed: 'Horse', category: 'equines', image_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTImaFZP_SRMx0vtv_qz65a1coTjlgaM6YLgJXUJciV9Q&s', price: 2000, farmer_id: 'seller2' },
@@ -76,31 +75,26 @@ function Home() {
   ///}
 
   return (
-    <div>
-      <h1>Farm<span className='highlighted'>art</span></h1>
-      <Login className='login'/>
-      <MyCart className='mycart' />
-      <Search className='search'/>
-      <FilterandSort className='filter'/>
+    <div className='home-container'>
       {/*Rendering the category buttons*/}
-      <div className='buttons'>
+      <div >
       <button onClick={() => handleCategoryClick('all-animals')}>All Animals</button>
-        <button onClick={() => handleCategoryClick('poultry')}>Poultry</button>
-        <button onClick={() => handleCategoryClick('livestock')}>Livestock</button>
-        <button onClick={() => handleCategoryClick('equines')}>Equines</button>
-        <button onClick={() => handleCategoryClick('aquaculture')}>Aquaculture</button>
-        <button onClick={() => handleCategoryClick('camelids')}>Camelids</button>
-        <button onClick={() => handleCategoryClick('apiary')}>Apiary</button>
-        <button onClick={() => handleCategoryClick('exotic-animals')}>Exotic Animals</button>
-        <button onClick={() => handleCategoryClick('small-mammals')}>Small Mammals</button>
-        <button onClick={() => handleCategoryClick('other')}>Other</button>
+        <button className='category-buttons' onClick={() => handleCategoryClick('poultry')}>Poultry</button>
+        <button className='category-buttons' onClick={() => handleCategoryClick('livestock')}>Livestock</button>
+        <button className='category-buttons' onClick={() => handleCategoryClick('equines')}>Equines</button>
+        <button className='category-buttons' onClick={() => handleCategoryClick('aquaculture')}>Aquaculture</button>
+        <button className='category-buttons' onClick={() => handleCategoryClick('camelids')}>Camelids</button>
+        <button className='category-buttons' onClick={() => handleCategoryClick('apiary')}>Apiary</button>
+        <button className='category-buttons' onClick={() => handleCategoryClick('exotic-animals')}>Exotic Animals</button>
+        <button className='category-buttons' onClick={() => handleCategoryClick('small-mammals')}>Small Mammals</button>
+        <button className='category-buttons' onClick={() => handleCategoryClick('other')}>Other</button>
       </div>
 
       {/*Rendering the animals*/}
       <div className='animals'>
         <ul>
           {filteredAnimals.map((animal) => (
-            <li key={animal.id}>
+            <li key={animal.id} className='animal-card'>
               <div className='image-container'>
                 <img className='images' src={animal.image_url} alt={animal.name} />
               </div>
@@ -116,7 +110,7 @@ function Home() {
                     <p>Weight: {animal.weight}</p>
                     <button>Add to Cart</button>
                     <p>Description: {animal.description}</p>
-                    {animal.farmer_id && <SellerRating farmer_id={animal.farmer_id} />}
+                    
                     </>
                 )}
                 <button className= "button" onClick={toggleDetails}>
